@@ -1,6 +1,7 @@
 # input-masked-react
 
 A fully customizable masked input component for the web built with React.
+Inspired by [devfolioco/react-otp-input](https://github.com/devfolioco/react-otp-input)
 
 ![Date-Of-Birth](https://i.ibb.co/7C4jMFM/dob-2.gif)
 
@@ -22,9 +23,11 @@ const App = props =>
   <MaskedInput
     numInputs={4}
     onChange={otp => console.log(otp)}
-    separator={<span>-</span>}
+    separator={<span>&nbsp;&nbsp;</span>}
   />
 ```
+[Edit on CodeSandbox](https://codesandbox.io/s/qk7y39z2r4)
+
 
 ##### With styles applied to each input:
 
@@ -44,6 +47,7 @@ const App = props =>
     }}
   />
 ```
+[CodeSanbox](https://codesandbox.io/s/3045z708q1)
 
 ##### When inputs are disabled:
 
@@ -55,14 +59,15 @@ const App = props =>
   <MaskedInput
     numInputs={4}
     onChange={otp => console.log(otp)}
-    disabled
+    isDisabled
     disabledStyle={{
       background: 'red'
     }}
   />
 ```
+[CodeSanbox](https://codesandbox.io/s/82vxoqp4pl)
 
-##### When inputs are focused:
+##### Add styles when inputs are focused:
 
 ```javascript
 import React from 'react';
@@ -77,6 +82,7 @@ const App = props =>
     }}
   />
 ```
+[Edit on CodeSandbox](https://codesandbox.io/s/x2jyx9xrxo)
 
 ##### With placeholder for each input:
 
@@ -97,6 +103,7 @@ const App = props =>
     placeholder='Y'
   />
 ```
+[CodeSanbox](https://codesandbox.io/s/ykmyy1pjn9)
 
 ##### With group separation:
 
@@ -119,6 +126,7 @@ const App = props =>
     groupSeperator={<div style={{ width: 15 }} />}
   />
 ```
+[CodeSanbox](https://codesandbox.io/s/zz9zw4zv8m)
 
 ##### With individual input props:
 
@@ -150,6 +158,7 @@ const App = props =>
     groupSeperator={<div style={{ width: 15 }} />}
   />
 ```
+[Edit on CodeSandbox](https://codesandbox.io/s/2k75z124j)
 
 ##### With error:
 
@@ -175,6 +184,7 @@ const App = props =>
     }
   />
 ```
+[Edit on CodeSandbox](https://codesandbox.io/s/m4jjzw0vj)
 
 ### Use cases
 
@@ -185,7 +195,7 @@ import React from 'react';
 import MaskedInput from 'input-masked-react';
 
 const App = props => 
-  <OtpInput
+  <MaskedInput
     numInputs={8}
     inputStyle={{
       border: 0,
@@ -208,6 +218,7 @@ const App = props =>
     onChange={data => console.log(data)}
   />
 ```
+[Edit on CodeSandbox](https://codesandbox.io/s/61w3y3764z)
 
 ##### For OTP:
 
@@ -229,6 +240,7 @@ const App = props =>
     onChange={data => console.log(data)}
   />
 ```
+[Edit on CodeSandbox](https://codesandbox.io/s/zq9pkz976x)
 
 ## API
 
