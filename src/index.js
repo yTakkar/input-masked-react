@@ -125,9 +125,8 @@ class MaskedInput extends React.Component {
 
     for (let i = 0; i < numInputs; i++) {
       inputs.push(
-        <React.Fragment>
+        <React.Fragment key={i}>
           <SingleInput
-            key={i}
             focus={activeInput === i}
             value={inputsValue && inputsValue[i]}
             onChange={this.handleOnChange}
