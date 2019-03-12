@@ -2,9 +2,9 @@
 
 A fully customizable masked input component for the web built with React.
 
-![GIPHY](https://media.giphy.com/media/9JiszPVOX5FuPfJm39/giphy.gif)
+![Date-Of-Birth](https://i.ibb.co/7C4jMFM/dob-2.gif)
 
-[CodeSandbox](https://codesandbox.io/s/yqolrnk749)
+![OTP](https://i.ibb.co/QXXXCqR/otp.gif)
 
 ## Installation
 
