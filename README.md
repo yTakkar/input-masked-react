@@ -15,7 +15,7 @@ yarn add input-masked-react
 
 #### Basic usage:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -31,7 +31,7 @@ const App = props =>
 
 ##### With styles applied to each input:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -51,7 +51,7 @@ const App = props =>
 
 ##### When inputs are disabled:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -69,7 +69,7 @@ const App = props =>
 
 ##### Add styles when inputs are focused:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -86,7 +86,7 @@ const App = props =>
 
 ##### With placeholder for each input:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -107,7 +107,7 @@ const App = props =>
 
 ##### With group separation:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -130,7 +130,7 @@ const App = props =>
 
 ##### With individual input props:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -162,7 +162,7 @@ const App = props =>
 
 ##### With error:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -190,7 +190,7 @@ const App = props =>
 
 ##### For Date Of Birth:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
@@ -222,7 +222,7 @@ const App = props =>
 
 ##### For OTP:
 
-```javascript
+```jsx
 import React from 'react';
 import MaskedInput from 'input-masked-react';
 
