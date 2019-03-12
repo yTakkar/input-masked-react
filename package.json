@@ -1,6 +1,6 @@
 {
   "name": "input-masked-react",
-  "version": "0.3.7",
+  "version": "0.3.8",
   "description": "A fully customizable masked input component for the web built with React",
   "main": "lib/index.js",
   "scripts": {
