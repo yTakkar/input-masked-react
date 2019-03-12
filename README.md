@@ -47,7 +47,7 @@ const App = props =>
     }}
   />
 ```
-[CodeSanbox](https://codesandbox.io/s/3045z708q1)
+[Edit on CodeSandbox](https://codesandbox.io/s/3045z708q1)
 
 ##### When inputs are disabled:
 
@@ -65,7 +65,7 @@ const App = props =>
     }}
   />
 ```
-[CodeSanbox](https://codesandbox.io/s/82vxoqp4pl)
+[Edit on CodeSandbox](https://codesandbox.io/s/82vxoqp4pl)
 
 ##### Add styles when inputs are focused:
 
@@ -103,7 +103,7 @@ const App = props =>
     placeholder='Y'
   />
 ```
-[CodeSanbox](https://codesandbox.io/s/ykmyy1pjn9)
+[Edit on CodeSandbox](https://codesandbox.io/s/ykmyy1pjn9)
 
 ##### With group separation:
 
@@ -126,7 +126,7 @@ const App = props =>
     groupSeperator={<div style={{ width: 15 }} />}
   />
 ```
-[CodeSanbox](https://codesandbox.io/s/zz9zw4zv8m)
+[Edit on CodeSandbox](https://codesandbox.io/s/zz9zw4zv8m)
 
 ##### With individual input props:
 
