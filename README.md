@@ -1,40 +1,233 @@
-# react-otp-input
+# input-masked-react
 
-A fully customizable, one-time password input component for the web built with React.
+A fully customizable masked input component for the web built with React.
 
 ![GIPHY](https://media.giphy.com/media/9JiszPVOX5FuPfJm39/giphy.gif)
 
-[Live Demo](https://devfolioco.github.io/react-otp-input)
-
-[CodeSandbox](https://codesandbox.io/s/0y849kwoqv)
+[CodeSandbox](https://codesandbox.io/s/yqolrnk749)
 
 ## Installation
 
-To install the latest stable version:
-
 ```
-npm install --save react-otp-input
+yarn add input-masked-react
 ```
 
-Basic usage:
+#### Basic usage:
 
 ```javascript
-import React, { Component } from 'react';
-import OtpInput from 'react-otp-input';
+import React from 'react';
+import MaskedInput from 'input-masked-react';
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <OtpInput
-          onChange={otp => console.log(otp)}
-          numInputs={6}
-          separator={<span>-</span>}
-        />
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    separator={<span>-</span>}
+  />
+```
+
+##### With styles applied to each input:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+  />
+```
+
+##### When inputs are disabled:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    disabled
+    disabledStyle={{
+      background: 'red'
+    }}
+  />
+```
+
+##### When inputs are focused:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    focusStyle={{
+      outline: 0
+    }}
+  />
+```
+
+##### With placeholder for each input:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    placeholder='Y'
+  />
+```
+
+##### With group separation:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={8}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    placeholder='Y'
+    groupSeperatorPositions={[1, 3]}
+    groupSeperator={<div style={{ width: 15 }} />}
+  />
+```
+
+##### With individual input props:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={8}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    inputPropsMap={{
+      0: { placeholder: "D", style: { width: 30 } },
+      1: { placeholder: "D" },
+      2: { placeholder: "M" },
+      3: { placeholder: "M" },
+      4: { placeholder: "Y" },
+      5: { placeholder: "Y" },
+      6: { placeholder: "Y" },
+      7: { placeholder: "Y" },
+    }}
+    groupSeperatorPositions={[1, 3]}
+    groupSeperator={<div style={{ width: 15 }} />}
+  />
+```
+
+##### With error:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    error
+    errorText={
+      <div style={{ color: "red", marginTop: 10 }}>
+        An error has occured!
       </div>
-    );
-  }
-}
+    }
+  />
+```
+
+### Use cases
+
+##### For Date Of Birth:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <OtpInput
+    numInputs={8}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    inputPropsMap={{
+      0: { placeholder: "D" },
+      1: { placeholder: "D" },
+      2: { placeholder: "M" },
+      3: { placeholder: "M" },
+      4: { placeholder: "Y" },
+      5: { placeholder: "Y" },
+      6: { placeholder: "Y" },
+      7: { placeholder: "Y" }
+    }}
+    groupSeperatorPositions={[1, 3]}
+    groupSeperator={<div style={{ width: 15 }} />}
+    onChange={data => console.log(data)}
+  />
+```
+
+##### For OTP:
+
+```javascript
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    separator={<span>&nbsp;&nbsp;&nbsp;</span>}
+    placeholder={"•"}
+    onChange={data => console.log(data)}
+  />
 ```
 
 ## API
@@ -65,7 +258,7 @@ export default class App extends Component {
     <td>separator</td>
     <td>component<br></td>
     <td>false</td>
-    <td></td>
+    <td>[space]</td>
     <td>Provide a custom separator between inputs by passing a component. For instance, <code>&lt;span&gt;-&lt;/span&gt;</code> would add <code>-</code> between each input</td>
   </tr>
   <tr>
@@ -104,7 +297,7 @@ export default class App extends Component {
     <td>Style applied or class passed to each input when disabled.</td>
   </tr>
   <tr>
-    <td>hasErrored</td>
+    <td>error</td>
     <td>boolean</td>
     <td>false</td>
     <td>false</td>
@@ -131,40 +324,39 @@ export default class App extends Component {
     <td>false</td>
     <td>Restrict input to only numbers.</td>
   </tr>
+  <tr>
+    <td>placeholder</td>
+    <td>string</td>
+    <td>false</td>
+    <td>none</td>
+    <td>Placeholder for each input</td>
+  </tr>
+  <tr>
+    <td>errorText</td>
+    <td>ReactNode</td>
+    <td>false</td>
+    <td>none</td>
+    <td>Error message to show</td>
+  </tr>
+  <tr>
+    <td>groupSeperator</td>
+    <td>ReactNode</td>
+    <td>false</td>
+    <td>none</td>
+    <td>React element to show at groupSeperatorPositions</td>
+  </tr>
+  <tr>
+    <td>groupSeperatorPositions</td>
+    <td>Object</td>
+    <td>false</td>
+    <td>{}</td>
+    <td>Positions when to show groupSeperator</td>
+  </tr>
+  <tr>
+    <td>inputPropsMap</td>
+    <td>Object</td>
+    <td>false</td>
+    <td>{}</td>
+    <td>An object with props specifically for individual inputs</td>
+  </tr>
 </table>
-
-## Development
-
-To run the development server:
-
-```
-npm run dev
-```
-
-To run the development server for example:
-
-```
-npm run docs
-```
-
-To make a production build of the example:
-
-```
-npm run docs:prod
-```
-
-## Checklist
-
-- [x] Add flowtypes
-- [x] Add ESLint, Prettier for code quality
-- [x] Add styling support for states including focus/disabled
-- [ ] Travis CI, Codecov
-- [ ] Write tests
-
-## Contributing
-
-Feel free to open issues and pull requests!
-
-## License
-
-MIT
