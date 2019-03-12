@@ -5,12 +5,11 @@ import SingleInput from './SingleInput';
 class MaskedInput extends React.Component {
   state = {
     activeInput: 0,
-    otp: [],
+    inputsValue: [],
     hidePlaceholder: {},
   };
 
-  // Helper to return OTP from input
-  getOtp = () => this.props.onChange(this.state.otp.join(''));
+  getInputsValue = () => this.props.onChange(this.state.inputsValue.join(''));
 
   // Focus on input by index
   focusInput = input => {
@@ -31,19 +30,19 @@ class MaskedInput extends React.Component {
     this.focusInput(activeInput - 1);
   };
 
-  // Change OTP value at focused input
+  // Change inputsValue value at focused input
   changeCodeAtFocus = value => {
-    const { activeInput, otp } = this.state;
-    otp[activeInput] = value;
-    this.setState({ otp });
-    this.getOtp();
+    const { activeInput, inputsValue } = this.state;
+    inputsValue[activeInput] = value;
+    this.setState({ inputsValue });
+    this.getInputsValue();
   };
 
-  // Handle pasted OTP
+  // Handle pasted inputsValue
   handleOnPaste = e => {
     e.preventDefault();
     const { numInputs } = this.props;
-    const { activeInput, otp } = this.state;
+    const { activeInput, inputsValue } = this.state;
 
     // Get pastedData in an array of max size (num of inputs - current position)
     const pastedData = e.clipboardData
@@ -54,12 +53,12 @@ class MaskedInput extends React.Component {
     // Paste data from focused input onwards
     for (let pos = 0; pos < numInputs; ++pos) {
       if (pos >= activeInput && pastedData.length > 0) {
-        otp[pos] = pastedData.shift();
+        inputsValue[pos] = pastedData.shift();
       }
     }
 
-    this.setState({ otp });
-    this.getOtp();
+    this.setState({ inputsValue });
+    this.getInputsValue();
   };
 
   handleOnChange = e => {
@@ -107,7 +106,7 @@ class MaskedInput extends React.Component {
   };
 
   renderInputs = () => {
-    const { activeInput, otp } = this.state;
+    const { activeInput, inputsValue } = this.state;
     const {
       numInputs,
       inputStyle,
@@ -130,7 +129,7 @@ class MaskedInput extends React.Component {
           <SingleInput
             key={i}
             focus={activeInput === i}
-            value={otp && otp[i]}
+            value={inputsValue && inputsValue[i]}
             onChange={this.handleOnChange}
             onKeyDown={this.handleOnKeyDown}
             onPaste={this.handleOnPaste}
