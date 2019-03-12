@@ -118,8 +118,8 @@ class MaskedInput extends React.Component {
       errorStyle,
       shouldAutoFocus,
       isInputNum,
-      groupSeperatorPositions,
-      groupSeperator,
+      groupSeparatorPositions,
+      groupSeparator,
     } = this.props;
     const inputs = [];
 
@@ -158,7 +158,7 @@ class MaskedInput extends React.Component {
             placeholder={this.getInputPlaceholder(i)}
             {...this.getRestInputProps(i)}
           />
-          {groupSeperatorPositions.includes(i) && groupSeperator}
+          {groupSeparatorPositions.includes(i) && groupSeparator}
         </React.Fragment>
       );
     }
@@ -190,7 +190,7 @@ MaskedInput.defaultProps = {
   isDisabled: false,
   shouldAutoFocus: false,
   inputPropsMap: {},
-  groupSeperatorPositions: [],
+  groupSeparatorPositions: [],
   separator: <span>&nbsp;</span>,
 };
 
