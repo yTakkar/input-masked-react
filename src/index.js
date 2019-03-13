@@ -178,7 +178,7 @@ class MaskedInput extends React.Component {
         >
           {this.renderInputs()}
         </div>
-        {error && errorText}
+        {error && errorText ? errorText : null}
       </div>
     );
   }
