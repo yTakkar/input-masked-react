@@ -122,8 +122,8 @@ const App = props =>
       height: 30
     }}
     placeholder='Y'
-    groupSeperatorPositions={[1, 3]}
-    groupSeperator={<div style={{ width: 15 }} />}
+    groupSeparatorPositions={[1, 3]}
+    groupSeparator={<div style={{ width: 15 }} />}
   />
 ```
 [Edit on CodeSandbox](https://codesandbox.io/s/zz9zw4zv8m)
@@ -154,8 +154,8 @@ const App = props =>
       6: { placeholder: "Y" },
       7: { placeholder: "Y" },
     }}
-    groupSeperatorPositions={[1, 3]}
-    groupSeperator={<div style={{ width: 15 }} />}
+    groupSeparatorPositions={[1, 3]}
+    groupSeparator={<div style={{ width: 15 }} />}
   />
 ```
 [Edit on CodeSandbox](https://codesandbox.io/s/2k75z124j)
@@ -213,8 +213,8 @@ const App = props =>
       6: { placeholder: "Y" },
       7: { placeholder: "Y" }
     }}
-    groupSeperatorPositions={[1, 3]}
-    groupSeperator={<div style={{ width: 15 }} />}
+    groupSeparatorPositions={[1, 3]}
+    groupSeparator={<div style={{ width: 15 }} />}
     onChange={data => console.log(data)}
   />
 ```
@@ -351,18 +351,18 @@ const App = props =>
     <td>Error message to show</td>
   </tr>
   <tr>
-    <td>groupSeperator</td>
+    <td>groupSeparator</td>
     <td>ReactNode</td>
     <td>false</td>
     <td>none</td>
-    <td>React element to show at groupSeperatorPositions</td>
+    <td>React element to show at groupSeparatorPositions</td>
   </tr>
   <tr>
-    <td>groupSeperatorPositions</td>
+    <td>groupSeparatorPositions</td>
     <td>Object</td>
     <td>false</td>
     <td>{}</td>
-    <td>Positions when to show groupSeperator</td>
+    <td>Positions when to show groupSeparator</td>
   </tr>
   <tr>
     <td>inputPropsMap</td>
