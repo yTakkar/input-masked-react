@@ -5,7 +5,7 @@ import SingleInput from './SingleInput';
 class MaskedInput extends React.Component {
   state = {
     activeInput: 0,
-    inputsValue: [],
+    inputsValue: this.props.defaultValues,
     hidePlaceholder: {},
   };
 
@@ -120,6 +120,7 @@ class MaskedInput extends React.Component {
       isInputNum,
       groupSeparatorPositions,
       groupSeparator,
+      values,
     } = this.props;
     const inputs = [];
 
@@ -171,7 +172,7 @@ class MaskedInput extends React.Component {
       <div>
         <div
           style={Object.assign(
-            { display: "flex" },
+            { display: 'flex' },
             isObject(containerStyle) && containerStyle
           )}
           className={!isObject(containerStyle) && containerStyle}
@@ -192,6 +193,7 @@ MaskedInput.defaultProps = {
   inputPropsMap: {},
   groupSeparatorPositions: [],
   separator: <span>&nbsp;</span>,
+  defaultValues: [],
 };
 
 export default MaskedInput;
