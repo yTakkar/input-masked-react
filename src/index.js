@@ -175,7 +175,7 @@ class MaskedInput extends React.Component {
             { display: 'flex' },
             isObject(containerStyle) && containerStyle
           )}
-          className={!isObject(containerStyle) && containerStyle}
+          className={!isObject(containerStyle) ? containerStyle : ''}
         >
           {this.renderInputs()}
         </div>
@@ -193,7 +193,6 @@ MaskedInput.defaultProps = {
   inputPropsMap: {},
   groupSeparatorPositions: [],
   separator: <span>&nbsp;</span>,
-  defaultValues: [],
 };
 
 export default MaskedInput;

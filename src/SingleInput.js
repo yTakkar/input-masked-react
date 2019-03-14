@@ -52,11 +52,6 @@ class SingleInput extends React.PureComponent {
             isDisabled && isObject(disabledStyle) && disabledStyle,
             error && isObject(errorStyle) && errorStyle
           )}
-          className={this.getClasses(
-            focus && focusStyle,
-            isDisabled && disabledStyle,
-            error && errorStyle
-          )}
           type={isInputNum ? 'number' : 'tel'}
           {...numValueLimits}
           maxLength="1"
