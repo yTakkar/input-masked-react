@@ -111,6 +111,7 @@ class MaskedInput extends React.Component {
       numInputs,
       inputStyle,
       focusStyle,
+      valueEnteredStyle,
       separator,
       isDisabled,
       disabledStyle,
@@ -149,6 +150,7 @@ class MaskedInput extends React.Component {
             separator={separator}
             inputStyle={inputStyle}
             focusStyle={focusStyle}
+            valueEnteredStyle={valueEnteredStyle}
             isLastChild={i === numInputs - 1}
             isDisabled={isDisabled}
             disabledStyle={disabledStyle}
@@ -193,6 +195,7 @@ MaskedInput.defaultProps = {
   inputPropsMap: {},
   groupSeparatorPositions: [],
   separator: <span>&nbsp;</span>,
+  defaultValues: [],
 };
 
 export default MaskedInput;

@@ -186,6 +186,51 @@ const App = props =>
 ```
 [Edit on CodeSandbox](https://codesandbox.io/s/m4jjzw0vj)
 
+##### With defaultValues:
+
+```jsx
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    defaultValues='1000'.split('')
+  />
+```
+[Edit on CodeSandbox](https://codesandbox.io/s/m4jjzw0vj)
+
+##### With valueEnteredStyle:
+
+```jsx
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    inputStyle={{
+      border: 0,
+      borderBottom: "1px solid #DFE0E3",
+      width: 20,
+      height: 30
+    }}
+    valueEnteredStyle={{
+      borderBottom: '2px solid blue'
+    }}
+  />
+```
+[Edit on CodeSandbox](https://codesandbox.io/s/m4jjzw0vj)
+
+
 ### Use cases
 
 ##### For Date Of Birth:
@@ -370,5 +415,19 @@ const App = props =>
     <td>false</td>
     <td>{}</td>
     <td>An object with props specifically for individual inputs</td>
+  </tr>
+  <tr>
+    <td>defaultValues</td>
+    <td>Array</td>
+    <td>false</td>
+    <td>[]</td>
+    <td>An array of default values for inputs</td>
+  </tr>
+  <tr>
+    <td>valueEnteredStyle</td>
+    <td>Object</td>
+    <td>false</td>
+    <td>{}</td>
+    <td>Styles applied on value-entered inputs</td>
   </tr>
 </table>

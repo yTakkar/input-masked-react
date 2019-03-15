@@ -31,6 +31,7 @@ class SingleInput extends React.PureComponent {
       error,
       errorStyle,
       focusStyle,
+      valueEnteredStyle,
       disabledStyle,
       shouldAutoFocus,
       isInputNum,
@@ -49,6 +50,7 @@ class SingleInput extends React.PureComponent {
             { width: '1em', textAlign: 'center' },
             inputStyle,
             focus && isObject(focusStyle) && focusStyle,
+            value && isObject(valueEnteredStyle) && valueEnteredStyle,
             isDisabled && isObject(disabledStyle) && disabledStyle,
             error && isObject(errorStyle) && errorStyle
           )}
