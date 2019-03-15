@@ -202,10 +202,10 @@ const App = props =>
       width: 20,
       height: 30
     }}
-    defaultValues='1000'.split('')
+    defaultValues={'1000'.split('')}
   />
 ```
-[Edit on CodeSandbox](https://codesandbox.io/s/m4jjzw0vj)
+[Edit on CodeSandbox](https://codesandbox.io/s/q9m9lqll3w)
 
 ##### With valueEnteredStyle:
 
@@ -226,9 +226,12 @@ const App = props =>
     valueEnteredStyle={{
       borderBottom: '2px solid blue'
     }}
+    focusStyle={{
+      outline: 0
+    }}
   />
 ```
-[Edit on CodeSandbox](https://codesandbox.io/s/m4jjzw0vj)
+[Edit on CodeSandbox](https://codesandbox.io/s/p99y8vp07)
 
 
 ### Use cases
