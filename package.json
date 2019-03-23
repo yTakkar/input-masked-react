@@ -7,8 +7,7 @@
     "build": "babel src -d lib",
     "build:watch": "babel src -w -d lib",
     "format": "prettier --write '**/*.{js,jsx}'",
-    "lint": "eslint '**/*.{js,jsx}' --quiet",
-    "publish": "yarn build && npm version patch && npm publish"
+    "lint": "eslint '**/*.{js,jsx}' --quiet"
   },
   "keywords": [],
   "peerDependencies": {
