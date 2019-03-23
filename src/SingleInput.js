@@ -34,13 +34,10 @@ class SingleInput extends React.PureComponent {
       valueEnteredStyle,
       disabledStyle,
       shouldAutoFocus,
-      isInputNum,
       value,
       style,
       ...rest
     } = this.props;
-
-    const numValueLimits = isInputNum ? { min: 0, max: 9 } : {};
 
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
@@ -49,13 +46,11 @@ class SingleInput extends React.PureComponent {
             isObject(style) && style,
             { width: '1em', textAlign: 'center' },
             inputStyle,
-            focus && isObject(focusStyle) && focusStyle,
             value && isObject(valueEnteredStyle) && valueEnteredStyle,
+            focus && isObject(focusStyle) && focusStyle,
             isDisabled && isObject(disabledStyle) && disabledStyle,
             error && isObject(errorStyle) && errorStyle
           )}
-          type={isInputNum ? 'number' : 'tel'}
-          {...numValueLimits}
           maxLength="1"
           ref={input => {
             this.input = input;

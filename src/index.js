@@ -62,6 +62,7 @@ class MaskedInput extends React.Component {
   };
 
   handleOnChange = e => {
+    if (this.props.isNumeric && isNaN(e.target.value)) return;
     this.changeCodeAtFocus(e.target.value);
     this.focusNextInput();
   };
@@ -118,10 +119,8 @@ class MaskedInput extends React.Component {
       error,
       errorStyle,
       shouldAutoFocus,
-      isInputNum,
       groupSeparatorPositions,
       groupSeparator,
-      values,
     } = this.props;
     const inputs = [];
 
@@ -157,7 +156,6 @@ class MaskedInput extends React.Component {
             error={error}
             errorStyle={errorStyle}
             shouldAutoFocus={shouldAutoFocus}
-            isInputNum={isInputNum}
             placeholder={this.getInputPlaceholder(i)}
             {...this.getRestInputProps(i)}
           />
@@ -196,6 +194,7 @@ MaskedInput.defaultProps = {
   groupSeparatorPositions: [],
   separator: <span>&nbsp;</span>,
   defaultValues: [],
+  isNumeric: false,
 };
 
 export default MaskedInput;

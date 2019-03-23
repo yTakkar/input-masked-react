@@ -67,6 +67,21 @@ const App = props =>
 ```
 [Edit on CodeSandbox](https://codesandbox.io/s/82vxoqp4pl)
 
+##### Force inputs to be numeric:
+
+```jsx
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => 
+  <MaskedInput
+    numInputs={4}
+    onChange={otp => console.log(otp)}
+    isNumeric
+  />
+```
+[Edit on CodeSandbox](https://codesandbox.io/s/yw5l11qlo9)
+
 ##### Add styles when inputs are focused:
 
 ```jsx
