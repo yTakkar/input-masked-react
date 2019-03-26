@@ -16,7 +16,7 @@ class MaskedInput extends React.Component {
     const { numInputs } = this.props;
     const { inputsValue } = this.state;
     const activeInput = Math.max(Math.min(numInputs - 1, input), 0);
-    if (inputsValue[activeInput + 1]) return;
+    // if (inputsValue[activeInput + 1]) return;
     this.setState({ activeInput });
   };
 
