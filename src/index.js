@@ -14,7 +14,9 @@ class MaskedInput extends React.Component {
   // Focus on input by index
   focusInput = input => {
     const { numInputs } = this.props;
+    const { inputsValue } = this.state;
     const activeInput = Math.max(Math.min(numInputs - 1, input), 0);
+    if (inputsValue[activeInput + 1]) return;
     this.setState({ activeInput });
   };
 
@@ -137,6 +139,9 @@ class MaskedInput extends React.Component {
               this.setState({
                 activeInput: i,
                 hidePlaceholder: { [i]: true },
+                inputsValue: inputsValue.map((value, index) =>
+                  index === i ? '' : value
+                ),
               });
               e.target.select();
             }}
