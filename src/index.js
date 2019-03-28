@@ -124,6 +124,7 @@ class MaskedInput extends React.Component {
       groupSeparatorPositions,
       groupSeparator,
       isNumeric,
+      inputClassName,
     } = this.props;
     const inputs = [];
 
@@ -164,6 +165,7 @@ class MaskedInput extends React.Component {
             shouldAutoFocus={shouldAutoFocus}
             placeholder={this.getInputPlaceholder(i)}
             type={isNumeric ? 'tel' : ''}
+            className={inputClassName}
             {...this.getRestInputProps(i)}
           />
           {groupSeparatorPositions.includes(i) && groupSeparator}
@@ -202,6 +204,7 @@ MaskedInput.defaultProps = {
   separator: <span>&nbsp;</span>,
   defaultValues: [],
   isNumeric: false,
+  inputClassName: '',
 };
 
 export default MaskedInput;
