@@ -16,7 +16,7 @@ class MaskedInput extends React.Component {
     const { numInputs } = this.props;
     const { inputsValue } = this.state;
     const activeInput = Math.max(Math.min(numInputs - 1, input), 0);
-    if (inputsValue[activeInput + 1]) return;
+    // if (inputsValue[activeInput + 1]) return;
     this.setState({ activeInput });
   };
 
@@ -69,12 +69,17 @@ class MaskedInput extends React.Component {
     this.focusNextInput();
   };
 
+  isCurrentEmpty = () => {
+    const { activeInput, inputsValue } = this.state;
+    return !inputsValue[activeInput];
+  };
+
   handleOnKeyDown = e => {
     switch (e.keyCode) {
       case keyboard.BACKSPACE:
         e.preventDefault();
+        if (this.isCurrentEmpty()) this.focusPrevInput();
         this.changeCodeAtFocus('');
-        this.focusPrevInput();
         break;
       case keyboard.DELETE:
         e.preventDefault();
@@ -141,11 +146,11 @@ class MaskedInput extends React.Component {
               this.setState({
                 activeInput: i,
                 hidePlaceholder: { [i]: true },
-                inputsValue: inputsValue.map((value, index) =>
-                  index === i ? '' : value
-                ),
+                // inputsValue: inputsValue.map((value, index) =>
+                //   index === i ? "" : value
+                // )
               });
-              e.target.select();
+              // e.target.select();
             }}
             onBlur={() => {
               this.setState({
@@ -204,7 +209,6 @@ MaskedInput.defaultProps = {
   separator: <span>&nbsp;</span>,
   defaultValues: [],
   isNumeric: false,
-  inputClassName: '',
 };
 
 export default MaskedInput;

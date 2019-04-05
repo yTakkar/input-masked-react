@@ -4,7 +4,7 @@ import { isObject } from './helpers';
 class SingleInput extends React.PureComponent {
   componentDidMount() {
     const { focus, shouldAutoFocus } = this.props;
-    if (this.input && focus && shouldAutoFocus) this.input.focus();
+    // if (this.input && focus && shouldAutoFocus) this.input.focus();
   }
 
   componentDidUpdate(prevProps) {
@@ -14,7 +14,7 @@ class SingleInput extends React.PureComponent {
     } = this;
     if (prevProps.focus !== focus && (input && focus)) {
       input.focus();
-      input.select();
+      // input.select();
     }
   }
 
