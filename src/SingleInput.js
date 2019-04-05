@@ -57,6 +57,7 @@ class SingleInput extends React.PureComponent {
           }}
           disabled={isDisabled}
           value={value ? value : ''}
+          autoComplete="off"
           {...rest}
         />
         {!isLastChild && separator}
