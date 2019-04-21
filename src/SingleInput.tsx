@@ -1,27 +1,35 @@
-import React from 'react';
-import { isObject } from './helpers';
+import React from 'react'
+import { isObject } from './helpers'
+import { ISingleInputProps } from './types'
 
-class SingleInput extends React.PureComponent {
-  componentDidMount() {
-    const { focus, shouldAutoFocus } = this.props;
-    // if (this.input && focus && shouldAutoFocus) this.input.focus();
+class SingleInput extends React.PureComponent<ISingleInputProps> {
+  private input: any
+
+  constructor(props: ISingleInputProps) {
+    super(props)
+    this.input = undefined
   }
 
-  componentDidUpdate(prevProps) {
-    const {
-      input,
-      props: { focus },
-    } = this;
+  // public componentDidMount() {
+  //   const { focus, shouldAutoFocus } = this.props
+  //   if (this.input && focus && shouldAutoFocus) this.input.focus()
+  // }
+
+  public componentDidUpdate(prevProps: ISingleInputProps) {
+    const { input, props } = this
+    const { focus } = props
+
     if (prevProps.focus !== focus && (input && focus)) {
-      input.focus();
-      // input.select();
+      input.focus()
+      // input.select()
     }
   }
 
-  getClasses = (...classes) =>
-    classes.filter(c => !isObject(c) && c !== false).join(' ');
+  private handleRef = (input: HTMLInputElement) => {
+    this.input = input
+  }
 
-  render() {
+  public render() {
     const {
       separator,
       isLastChild,
@@ -33,17 +41,16 @@ class SingleInput extends React.PureComponent {
       focusStyle,
       valueEnteredStyle,
       disabledStyle,
-      shouldAutoFocus,
       value,
       style,
       ...rest
-    } = this.props;
+    } = this.props
 
     return (
       <div style={{ display: 'flex', alignItems: 'center' }}>
         <input
           style={Object.assign(
-            isObject(style) && style,
+            isObject(style) ? style : {},
             { width: '1em', textAlign: 'center' },
             inputStyle,
             value && isObject(valueEnteredStyle) && valueEnteredStyle,
@@ -51,19 +58,17 @@ class SingleInput extends React.PureComponent {
             isDisabled && isObject(disabledStyle) && disabledStyle,
             error && isObject(errorStyle) && errorStyle
           )}
-          maxLength="1"
-          ref={input => {
-            this.input = input;
-          }}
+          maxLength={1}
+          ref={this.handleRef}
           disabled={isDisabled}
           value={value ? value : ''}
-          autoComplete="off"
+          autoComplete='off'
           {...rest}
         />
         {!isLastChild && separator}
       </div>
-    );
+    )
   }
 }
 
-export default SingleInput;
+export default SingleInput

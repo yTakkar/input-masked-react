@@ -1,40 +1,28 @@
 {
   "name": "input-masked-react",
   "version": "0.3.27",
-  "description": "A fully customizable masked input component for the web built with React",
+  "description": "A fully customizable masked input component with React",
   "main": "lib/index.js",
   "scripts": {
-    "build": "babel src -d lib",
-    "build:watch": "babel src -w -d lib",
-    "format": "prettier --write '**/*.{js,jsx}'",
-    "lint": "eslint '**/*.{js,jsx}' --quiet"
+    "build": "rm -rf lib && tsc",
+    "build:watch": "tsc -w",
+    "demo": "parcel demo/index.html -p 4000 -d demo/dist",
+    "lint": "tslint -c ./tslint.json -p .",
+    "lint:fix": "tslint -p . --fix"
   },
-  "keywords": [],
-  "peerDependencies": {
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
-  },
+  "keywords": [
+    "Masked Input",
+    "OTP",
+    "DOB"
+  ],
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
-    "babel-loader": "^7.1.4",
-    "babel-plugin-transform-class-properties": "^6.24.1",
-    "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-preset-env": "^1.7.0",
-    "babel-preset-react": "^6.24.1",
-    "concurrently": "^3.5.1",
-    "css-loader": "^0.28.11",
-    "eslint": "^4.19.1",
-    "eslint-config-airbnb": "^16.1.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-import": "^2.12.0",
-    "eslint-plugin-jsx-a11y": "^6.0.3",
-    "eslint-plugin-prettier": "^2.6.0",
-    "eslint-plugin-react": "^7.9.1",
-    "prettier": "^1.13.4",
-    "react": "^16.4.0",
-    "react-dom": "^16.4.0",
-    "style-loader": "^0.21.0"
+    "@types/react": "^16.8.14",
+    "@types/react-dom": "^16.8.4",
+    "prettier": "^1.17.0",
+    "tslint": "^5.16.0",
+    "tslint-config-prettier": "^1.18.0",
+    "tslint-react": "^4.0.0",
+    "typescript": "^3.4.4"
   },
   "author": "Faiyaz Shaikh <www.shtakkar@gmail.com>",
   "license": "MIT",
@@ -44,5 +32,9 @@
   },
   "bugs": {
     "url": "https://github.com/yTakkar/input-masked-react/issues"
+  },
+  "dependencies": {
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }
