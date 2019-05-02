@@ -1,0 +1,17 @@
+{
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "globals": {
+    "document": true
+  },
+  "rules": {
+    "prettier/prettier": "error",
+    "no-console": "off",
+    "react/sort-comp": "off",
+    "no-restricted-globals": "off",
+    "react/jsx-filename-extension": "off",
+    "no-plusplus": "off",
+    "import/no-extraneous-dependencies": "off"
+  }
+}
