@@ -37,9 +37,13 @@ class SingleInput extends React.PureComponent {
       shouldAutoFocus,
       value,
       inputLength,
+      inputClassName,
       style,
+      className,
       ...rest
     } = this.props
+
+    const cls = `${inputClassName} ${className}`
 
     return (
       <div style={{ display: "flex", alignItems: "center" }}>
@@ -60,6 +64,7 @@ class SingleInput extends React.PureComponent {
           disabled={isDisabled}
           value={value || ""}
           autoComplete="off"
+          className={cls}
           {...rest}
         />
         {!isLastChild && separator}
@@ -70,6 +75,8 @@ class SingleInput extends React.PureComponent {
 
 SingleInput.defaultProps = {
   value: "",
+  inputClassName: "",
+  className: "",
   style: {},
 }
 
@@ -87,7 +94,9 @@ SingleInput.propTypes = {
   shouldAutoFocus: PropTypes.bool.isRequired,
   value: PropTypes.string,
   inputLength: PropTypes.number.isRequired,
+  inputClassName: PropTypes.string,
   style: PropTypes.shape({}),
+  className: PropTypes.string,
 }
 
 export default SingleInput

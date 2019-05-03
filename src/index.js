@@ -184,7 +184,7 @@ class MaskedInput extends React.Component {
             shouldAutoFocus={shouldAutoFocus}
             placeholder={this.getInputPlaceholder(i)}
             type={isNumeric ? "tel" : ""}
-            className={inputClassName}
+            inputClassName={inputClassName}
             inputLength={inputLength}
             {...this.getRestInputProps(i)}
           />
