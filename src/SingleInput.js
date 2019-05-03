@@ -37,6 +37,7 @@ class SingleInput extends React.PureComponent {
       shouldAutoFocus,
       value,
       inputLength,
+      style,
       ...rest
     } = this.props
 
@@ -46,6 +47,7 @@ class SingleInput extends React.PureComponent {
           style={Object.assign(
             { width: "1em", textAlign: "center" },
             inputStyle,
+            style,
             value && valueEnteredStyle,
             focus && focusStyle,
             isDisabled && disabledStyle,
@@ -68,6 +70,7 @@ class SingleInput extends React.PureComponent {
 
 SingleInput.defaultProps = {
   value: "",
+  style: {},
 }
 
 SingleInput.propTypes = {
@@ -84,6 +87,7 @@ SingleInput.propTypes = {
   shouldAutoFocus: PropTypes.bool.isRequired,
   value: PropTypes.string,
   inputLength: PropTypes.number.isRequired,
+  style: PropTypes.shape({}),
 }
 
 export default SingleInput
