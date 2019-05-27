@@ -76,10 +76,13 @@ class MaskedInput extends React.Component {
   }
 
   handleOnChange = e => {
-    const { inputLength } = this.props
-    if (this.props.isNumeric && isNaN(e.target.value)) return
-    this.changeCodeAtFocus(e.target.value)
-    if (e.target.value.length === inputLength) this.focusNextInput()
+    const { value } = e.target
+    const { inputLength, onChangeHook } = this.props
+    if (this.props.isNumeric && isNaN(value)) return
+    const continueStatus = onChangeHook(value)
+    if (!continueStatus) return
+    this.changeCodeAtFocus(value)
+    if (value.length === inputLength) this.focusNextInput()
   }
 
   isCurrentEmpty = () => {
@@ -215,6 +218,7 @@ class MaskedInput extends React.Component {
 }
 
 MaskedInput.defaultProps = {
+  onChangeHook: () => true,
   isDisabled: false,
   shouldAutoFocus: false,
   inputPropsMap: {},
@@ -239,6 +243,7 @@ MaskedInput.defaultProps = {
 MaskedInput.propTypes = {
   numInputs: PropTypes.number.isRequired,
   onChange: PropTypes.func.isRequired,
+  onChangeHook: PropTypes.func,
   isDisabled: PropTypes.bool,
   shouldAutoFocus: PropTypes.bool,
   inputPropsMap: PropTypes.shape({}),
