@@ -79,7 +79,7 @@ class MaskedInput extends React.Component {
     const { value } = e.target
     const { inputLength, onChangeHook } = this.props
     if (this.props.isNumeric && isNaN(value)) return
-    const continueStatus = onChangeHook(value)
+    const continueStatus = onChangeHook(value, this.state)
     if (!continueStatus) return
     this.changeCodeAtFocus(value)
     if (value.length === inputLength) this.focusNextInput()
