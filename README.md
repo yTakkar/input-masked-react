@@ -82,6 +82,35 @@ const App = props =>
 ```
 [Edit on CodeSandbox](https://codesandbox.io/s/yw5l11qlo9)
 
+##### With onChange hook:
+
+```jsx
+import React from 'react';
+import MaskedInput from 'input-masked-react';
+
+const App = props => (
+  <MaskedInput
+    numInputs={4}
+    onChangeHook={(value, state) => {
+      const { activeInput, inputsValue } = state;
+
+      console.log("ActiveInput: ", activeInput);
+      console.log("Whole values list: ", inputsValue);
+      console.log("Current input value: ", value);
+      
+      if (inputsValue.length === 2) {
+        // don't allow users to enter more than 2 values
+        return false;
+      }
+      return true;
+    }}
+    onChange={otp => undefined}
+  />
+);
+
+```
+[Edit on CodeSandbox](https://codesandbox.io/s/yw5l11qlo9)
+
 ##### Add styles when inputs are focused:
 
 ```jsx
@@ -330,6 +359,13 @@ const App = props =>
     <td>Returns OTP code typed in inputs.</td>
   </tr>
   <tr>
+    <td>onChangeHook</td>
+    <td>function</td>
+    <td><strong>true</strong></td>
+    <td>() => true</td>
+    <td>An onChange hook function when returns false will not allow users to enter values further.</td>
+  </tr>
+  <tr>
     <td>separator</td>
     <td>component<br></td>
     <td>false</td>
@@ -386,14 +422,7 @@ const App = props =>
     <td>Style applied or class passed to each input when errored.</td>
   </tr>
   <tr>
-    <td>shouldAutoFocus</td>
-    <td>boolean</td>
-    <td>false</td>
-    <td>false</td>
-    <td>Auto focuses input on inital page load.</td>
-  </tr>
-  <tr>
-    <td>isInputNum</td>
+    <td>isNumeric</td>
     <td>boolean</td>
     <td>false</td>
     <td>false</td>
