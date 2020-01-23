@@ -1,0 +1,17 @@
+name: Lint
+
+on: push
+
+jobs:
+  Install:
+    name: Install
+    runs-on: [ubuntu-latest]
+    steps:
+    - name: Install dependencies
+      run: |
+        npm run install
+        
+  lint:
+    name: Lint
+    runs-on: [ubuntu-latest]
+    needs: [Install]
