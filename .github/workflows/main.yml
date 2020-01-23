@@ -13,7 +13,6 @@ jobs:
   lint:
     name: Lint
     runs-on: [ubuntu-latest]
-    needs: [Install]
     steps:
       - name: Lint JavaScript files
       - run: npm run lint
