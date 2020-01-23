@@ -8,8 +8,7 @@ jobs:
     runs-on: [ubuntu-latest]
     steps:
     - name: Install dependencies
-      run: |
-        npm run install
+      run: npm run install
 
   lint:
     name: Lint
@@ -17,5 +16,4 @@ jobs:
     needs: [Install]
     steps:
       - name: Lint JavaScript files
-      - run: |
-          npm run lint
+      - run: npm run lint
